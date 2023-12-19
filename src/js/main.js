@@ -48,32 +48,32 @@ $infoText.innerHTML = images[0].text;
 // -----------------------------------------------
 //                    SLIDER LEFT
 // -----------------------------------------------
-for (i = 0; i < images.length; i++) {
+images.forEach((image, index) => {
     const $singleImg = document.createElement('img');
-    $singleImg.src = images[i].url;
+    $singleImg.src = image.url;
     $singleImg.classList.add('left-slider-img');
 
-    if (i === 0) {
+    if (index === 0) {
         $singleImg.classList.add('active');
     }
 
     $leftSlider.append($singleImg);
-}
+});
 
 // -----------------------------------------------
 //                    SLIDER RIGHT
 // -----------------------------------------------
 
-for (i = 0; i < images.length; i++) {
+images.forEach((image, i) => {
     const $singleImg = document.createElement('img');
-    $singleImg.src = images[i].url;
+    $singleImg.src = image.url;
     $singleImg.classList.add('right-slider-img');
 
     if (i === 0) {
         $singleImg.classList.add('selected');
     }
     $rightSlider.append($singleImg);
-}
+});
 // -----------------------------------------------
 //                    VARIABILI
 // -----------------------------------------------
